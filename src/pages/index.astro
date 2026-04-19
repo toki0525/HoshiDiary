@@ -1,17 +1,35 @@
 ---
+//css読み込ませる
+import "../style/stylesheet.css";
+import { getSheetData } from "../lib/getSheetData.js"; // ←追加
 
+const data = await getSheetData();
+
+// const entries = [
+// 	{date: "2026-04-18", emoji:"🎶"},
+// 	{date: "2026-04-17", emoji:"💻"},
+// ];
 ---
 
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>ほしぐらし</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1 class="title">日記</h1>
+
+		<div class="list">
+			{data.map(entry => (
+				<a href={`/diary/${entry.slug}`} class="item">
+					<span class="emoji">{entry.emoji}</span>
+					<span class="date">{entry.date}</span>
+				</a>
+			))}
+		</div>
 	</body>
 </html>

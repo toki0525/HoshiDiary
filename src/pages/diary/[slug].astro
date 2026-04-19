@@ -1,0 +1,36 @@
+---
+//css読み込ませる
+import "../../style/stylesheet.css";
+import { getSheetData } from "../../lib/getSheetData.js";
+
+export async function getStaticPaths(){
+    const data = await getSheetData();
+
+    return data.map(entry => ({
+        params: {
+            slug: entry.slug
+        }
+    }));
+}
+
+const { slug } = Astro.params;
+const data = await getSheetData();
+const entry = data.find(e => e.slug === slug);
+
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content={Astro.generator} />
+		<title>ほしぐらし</title>
+	</head>
+	<body>
+        <div class = "header">
+		    <h1>{entry?.title || slug}</h1>
+            <p class = "diary_time">{entry?.date}</p>
+        </div>
+        <p>{entry?.body}</p>
+        <p>{entry?.emoji}</p>
+	</body>
+</html>

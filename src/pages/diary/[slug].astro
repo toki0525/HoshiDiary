@@ -30,7 +30,7 @@ const entry = data.find(e => e.slug === slug);
 		    <h1>{entry?.title || slug}</h1>
             <p class = "diary_time">{entry?.date}</p>
         </div>
-        <p>{entry?.body}</p>
+        <p class="diary-body">{entry?.body}</p>
         <p>{entry?.emoji}</p>
 	</body>
 </html>

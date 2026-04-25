@@ -22,6 +22,8 @@ const entry = data.find(e => e.slug === slug);
 <html lang="ja">
 	<head>
 		<meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="icon" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>ほしぐらし</title>
 	</head>
@@ -30,7 +32,9 @@ const entry = data.find(e => e.slug === slug);
 		    <h1>{entry?.title || slug}</h1>
             <p class = "diary_time">{entry?.date}</p>
         </div>
-        <p class="diary-body">{entry?.body}</p>
-        <p>{entry?.emoji}</p>
+        <div class="content">
+            <p class="diary-body">{entry?.body}</p>
+            <p>{entry?.emoji}</p>
+        </div>
 	</body>
 </html>

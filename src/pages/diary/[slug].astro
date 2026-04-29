@@ -24,17 +24,30 @@ const entry = data.find(e => e.slug === slug);
 		<meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<link rel="icon" href="/icon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>星より、</title>
 	</head>
 	<body>
-        <div class = "header">
+        <div class = "diary-header">
 		    <h1>{entry?.title || slug}</h1>
             <p class = "diary_time">{entry?.date}</p>
         </div>
-        <div class="content">
-            <p class="diary-body">{entry?.body}</p>
-            <p>{entry?.emoji}</p>
-        </div>
+
+        <main class="layput">
+            <aside class="side left">
+                <p class = "diary_time info">{entry?.date}</p>
+            </aside>
+
+            <div class="content">
+                <p class="diary-body">{entry?.body}</p>
+                <p>{entry?.emoji}</p>
+                <a href="/">← ホームへ</a>
+            </div>
+
+             <aside class="side right">
+                <p class="info">{entry?.emoji}</p>
+            </aside>
+        </main>
 	</body>
 </html>

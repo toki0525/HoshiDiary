@@ -13,6 +13,10 @@
     background-position: center;
 } */
 
+header {
+    overflow: hidden;
+}
+
 .topImage {
     width: 100%;
     height: auto;
@@ -228,5 +232,11 @@ details[open] summary {
 }
 
 @media (max-width: 768px) {
-   
+   .topImage {
+        /* transform: scale(1.15);
+        transform-origin: center top; */
+        width: 140%;
+        max-width: none;
+        margin-left: -20%;
+    }
 }

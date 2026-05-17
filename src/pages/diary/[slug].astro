@@ -34,20 +34,21 @@ const entry = data.find(e => e.slug === slug);
             <p class = "diary_time">{entry?.date}</p>
         </div>
 
-        <main class="layput">
-            <aside class="side left">
-                <p class = "diary_time info">{entry?.date}</p>
-            </aside>
-
+            <!-- 日記本文 -->
             <div class="content">
-                <p class="diary-body">{entry?.body}</p>
-                <p>{entry?.emoji}</p>
-                <a href="/">← ホームへ</a>
-            </div>
 
-             <aside class="side right">
-                <p class="info">{entry?.emoji}</p>
-            </aside>
+                <div class="diary-text">
+                    <p class="diary-body">{entry?.body}</p>
+                    <div class="diary-emoji">
+                        <span class="emoji">{entry?.emoji}</p>
+                    </div>
+                </div>
+
+                <div class="button-wrap">
+                    <a href="/" class="back-button">← ホームへ</a>
+                </div>
+                
+            </div>
         </main>
 	</body>
 </html>

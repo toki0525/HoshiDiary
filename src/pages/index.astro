@@ -4,6 +4,15 @@ import "../style/stylesheet.css";
 import { getSheetData } from "../lib/getSheetData.js"; // ←追加
 
 const data = await getSheetData();
+const groupedData = {};
+
+data.forEach(entry => {
+  if (!groupedData[entry.month]) {
+    groupedData[entry.month] = [];
+  }
+
+  groupedData[entry.month].push(entry);
+});
 
 // const entries = [
 // 	{date: "2026-04-18", emoji:"🎶"},
@@ -22,20 +31,42 @@ const data = await getSheetData();
 	</head>
 
 	<header>
-		<div class="topImage"></div>
+		<!-- <div class="topImage"> -->
+			<img src="/header.svg" alt="header" class="topImage" />
+		<!-- </div> -->
 	</header>
 
 	<main>
 		<div class="content">
 			<h1 class="title"></h1>
 
-			<div class="list">
+			<!-- <div class="list">
 				{data.map(entry => (
 					<a href={`/diary/${entry.slug}`} class="item">
 						<span class="emoji">{entry.emoji}</span>
 						<span class="date">{entry.date}</span>
 					</a>
 				))}
+			</div> -->
+
+			<!-- トグル表示する -->
+			<div class="list">
+			{Object.entries(groupedData).reverse().map(([month, entries], index) => (
+				<details open={index === 0}>
+
+					<summary>✦ {month}</summary>
+
+					<div class="month-list">
+						{entries.map(entry => (
+							<a href={`/diary/${entry.slug}`} class="item">
+								<span class="emoji">{entry.emoji}</span>
+								<span class="date">{entry.date}</span>
+							</a>
+						))}
+					</div>
+
+				</details>
+			))}
 			</div>
 		</div>
 	</main>

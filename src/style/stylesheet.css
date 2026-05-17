@@ -32,6 +32,15 @@ body {
     padding: 20px;
 }
 
+.latest-diary {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.latest-diary p {
+    margin-bottom: 0;
+}
+
 .title {
     font-size: 28px;
     margin-bottom: 20px;
@@ -171,7 +180,7 @@ details[open] summary {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.10);/*影*/
 }
 
-.content p {
+.diary-content p {
     text-decoration: underline;
     text-decoration-color: #bbb;
     text-decoration-thickness: 1px;

@@ -14,6 +14,8 @@ data.forEach(entry => {
   groupedData[entry.month].push(entry);
 });
 
+const latestEntry = data[data.length - 1];
+
 // const entries = [
 // 	{date: "2026-04-18", emoji:"🎶"},
 // 	{date: "2026-04-17", emoji:"💻"},
@@ -48,6 +50,15 @@ data.forEach(entry => {
 					</a>
 				))}
 			</div> -->
+
+			<section class="latest-diary">
+
+  				<p class="latest-label">今日の日記</p>
+				<a href={`/diary/${latestEntry.slug}`} class="item">
+    				<span class="emoji">{latestEntry.emoji}</span>
+    				<span class="date">{latestEntry.date}</span>
+  				</a>
+			</section>
 
 			<!-- トグル表示する -->
 			<div class="list">

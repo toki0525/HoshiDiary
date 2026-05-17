@@ -180,7 +180,7 @@ details[open] summary {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.10);/*影*/
 }
 
-.diary-content p {
+.diary-body{
     text-decoration: underline;
     text-decoration-color: #bbb;
     text-decoration-thickness: 1px;

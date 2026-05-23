@@ -2,6 +2,19 @@
     padding: 0;
     margin: 0;
     background-color: #fff;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+}
+
+.zen-kaku-gothic-antique-regular {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-medium {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* .topImage{
@@ -24,12 +37,28 @@ header {
 }
 
 body {
-    font-family: sans-serif;
     background: #fafafa;
     margin: 0;
     /* margin: 20px;
     padding: 20px; */
 }
+
+body h1{
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+body p{
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* body a{
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
+} */
 
 .content{
     margin: 0 auto;
@@ -175,7 +204,7 @@ details[open] summary {
 
 .diary-text {
     padding: 10px 20px;
-    margin: 10px;
+    margin: 25px;
     border: solid 3px transparent;
     background:
     linear-gradient(#fff, #fff) padding-box,
@@ -201,6 +230,8 @@ details[open] summary {
     margin: 20px auto;
     align-items: center;
     justify-content: center;
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    font-weight: 400;
 
     display: inline-flex;
 
@@ -238,5 +269,14 @@ details[open] summary {
         width: 140%;
         max-width: none;
         margin-left: -20%;
+    }
+
+    .diary-text{
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-bottom: 20px;
     }
 }

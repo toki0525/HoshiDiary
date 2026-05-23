@@ -55,10 +55,10 @@ body p{
     letter-spacing: 1px;
 }
 
-/* body a{
-    font-family: "Zen Kaku Gothic Antique", sans-serif;
+body a{
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
     font-weight: 400;
-} */
+}
 
 .content{
     margin: 0 auto;

@@ -17,6 +17,13 @@ const { slug } = Astro.params;
 const data = await getSheetData();
 const entry = data.find(e => e.slug === slug);
 
+const currentIndex = data.findIndex(
+  e => e.slug === slug
+);
+
+const prevEntry = data[currentIndex - 1];
+const nextEntry = data[currentIndex + 1];
+
 ---
 
 <html lang="ja">
@@ -51,11 +58,39 @@ const entry = data.find(e => e.slug === slug);
                     </div>
                 </div>
 
+                <section class="page-nav">
+
+                    <div class="page_nav">
+                        {nextEntry ? (
+                            <a href={`/diary/${nextEntry.slug}`} class="nav-button">
+                                ← 次のページ {nextEntry.emoji}
+                            </a>
+                            ) : (
+                            <span class="nav-button disabled">← まだ記録されていません</span>
+                        )}
+                    </div>
+
+                    <div　class="page_nav">
+                        {prevEntry ? (
+                            <a href={`/diary/${prevEntry.slug}`} class="nav-button">
+                                 前のページ {prevEntry.emoji} →
+                            </a>
+                            ) : (
+                            <span class="nav-button disabled">まだ記録されていません →</span>
+                        )}
+                    </div>
+                </section> 
+
                 <div class="button-wrap">
-                    <a href="/" class="back-button">← ホームへ</a>
+                    <a href="/" class="back-button">ホームへ</a>
                 </div>
+
                 
             </div>
+
+            <footer>
+    		    Copyright © CanouSei. All Rights Reserved.
+		    </footer>
         </main>
 	</body>
 </html>
